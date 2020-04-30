@@ -26,6 +26,9 @@
                 })(document);
 
             </script>
+
+           
+
         <h1>Login with Amazon</h1>
         <a href id="LoginWithAmazon">
             <img border="0" alt="Login with Amazon"
@@ -33,15 +36,27 @@
                 width="156" height="32" />
          </a>
 
-         <script type="text/javascript">
+        <div>
+            <a id="Logout">Logout</a> 
+        </div>
+    
+        <script type="text/javascript">
+            document.getElementById('Logout').onclick = function() { 
+                alert('logout');
+                amazon.Login.logout();
+            };
+        </script>
+
+        <script type="text/javascript">
             document.getElementById('LoginWithAmazon').onclick = function() {
+                alert('login')
                 options = {}
                 options.scope = 'profile';
                 options.scope_data = {
                     'profile' : {'essential': false} 
                 };
                 amazon.Login.authorize(options,
-                    'https://www.matchbox.io/qotd.html');
+                    'http://localhost:2368/qotd.html');
                 return false;
             };
         </script>
