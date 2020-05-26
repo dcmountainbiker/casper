@@ -24,21 +24,28 @@ into the {body} of the default.hbs template --}}
                     {{/if}}
                 {{/has}}
 
+            {{/foreach}}
+
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+            {{#foreach posts}}
                  {{#has tag="news"}}
                     {{#if featured}}
                         {{> "post-card"}}
                     {{/if}}
                 {{/has}}
+            {{/foreach}}
 
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+            {{#foreach posts}}
                  {{#has tag="apps"}}
                     {{#if featured}}
                         {{> "post-card"}}
                     {{/if}}
                 {{/has}}
+            {{/foreach}}
 
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+            {{#foreach posts}}
                  {{#has tag="podcast"}}
                     {{> "post-card"}}
                 {{/has}}
